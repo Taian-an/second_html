@@ -1,0 +1,121 @@
+/* 引入 Inter 字體以提高可讀性和現代感 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* 全局樣式 */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fa; /* 淺灰色背景，用於區分內容卡片 */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 頁首樣式 */
+header {
+    background-color: #1f2937; /* 深色背景 */
+    color: white;
+    text-align: center;
+    padding: 40px 20px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* 內容區塊包裹器樣式 */
+.content {
+    max-width: 1000px; /* 設定最大寬度 */
+    margin: 30px auto; /* 水平居中 */
+    padding: 0 15px; /* 防止內容緊貼螢幕邊緣 */
+    display: flex; /* 使用 Flexbox 實現兩欄佈局 */
+    flex-wrap: wrap;
+    gap: 20px; /* 內容卡片間的間距 */
+    justify-content: center; /* 居中佈局 */
+}
+
+/* 通用卡片樣式 */
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px; /* 圓角 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* 柔和陰影 */
+    transition: transform 0.3s ease-in-out; /* 添加懸停動畫 */
+    flex: 1 1 45%; /* 佔用 45% 的寬度，允許兩個卡片並排 */
+    min-width: 300px; /* 最小寬度，防止在小螢幕上被擠壓 */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 懸停時略微上浮，增加互動感 */
+}
+
+/* 標題樣式 */
+h2 {
+    color: #3b82f6; /* 強調藍色 */
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0; /* 輕微分隔線 */
+    padding-bottom: 8px;
+}
+
+/* 圖片樣式 */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 圓形頭像 */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #3b82f6; /* 藍色邊框 */
+}
+
+/* 個人簡歷區塊調整 */
+.biography {
+    text-align: center; /* 圖片和文字居中 */
+}
+
+/* 成就列表樣式 */
+.achievements ul {
+    list-style-type: none; /* 移除預設點標記 */
+    padding: 0;
+}
+
+.achievements li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.05rem;
+}
+
+/* 為成就列表添加自定義圖標（使用 CSS 偽元素） */
+.achievements li::before {
+    content: "🚀"; /* 自定義圖標 */
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-size: 0.9rem;
+}
+
+/* 頁腳樣式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #e5e7eb;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計：針對小螢幕（如手機）調整 */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* 將卡片堆疊為單欄 */
+    }
+
+    .card {
+        flex: 1 1 100%; /* 卡片佔滿整個寬度 */
+        margin: 10px 0;
+    }
+}
